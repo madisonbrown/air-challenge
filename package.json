@@ -19,7 +19,12 @@
   },
   "homepage": "https://github.com/madisonbrown/air-challenge#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "csv-stringify": "^5.5.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
