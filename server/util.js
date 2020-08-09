@@ -43,7 +43,6 @@ const downloadImages = async (sources, directory, batchSize) => {
         .then(({ filename }) => {
           const ext = path.extname(filename);
           renameAsync(filename, `${directory}/${name}${ext}`);
-          console.log(filename);
           success += 1;
         });
     });
