@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json(), express.urlencoded({ extended: true }));
 
 app.post('/collection/importer', (req, res, next) => {
-  const { url } = req.query;
+  const { url } = req.body;
 
   if (!url) {
     return next({
