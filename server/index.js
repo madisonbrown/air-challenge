@@ -9,7 +9,6 @@ const PORT = 3000;
 
 // make sure the filesystem is set up properly
 const METADATA_DIR = path.resolve(__dirname, '../data/metadata');
-console.log(METADATA_DIR);
 const MEDIA_DIR = path.resolve(__dirname, '../data/media');
 fs.mkdirSync(METADATA_DIR, { recursive: true });
 fs.mkdirSync(MEDIA_DIR, { recursive: true });
