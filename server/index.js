@@ -20,25 +20,15 @@ app.use(express.json(), express.urlencoded({ extended: true }));
 
 /**
  * A route that exports metadata from Collections
- * - Input: Takes a Collection URL
- * - Output:
- *     - HTTP response of how many assets were imported
- *     - Writes all the asset metadata to a CSV file in a local directory named `metadata` with filename `[collection ID].csv`.
- *         - The CSV file should have the following header columns:
- *             - `id`: Flickr asset ID
- *             - `created`: Date the asset was created, i.e. when the photo was taken or video was recorded
- *             - `title`: The name the creator gave to the asset on Flickr (this might be blank for some assets)
- *             - `width`: Width for the largest version of the asset
- *             - `height`: Height for the largest version of the asset
- *             - `url`: URL for the highest-resolution version of the asset
  */
 app.post('/collection/importer', async (req, res, next) => {
+  // expect to find a url property on the request body containing the collection url
   const { url } = req.body;
 
   if (!url) {
     return next({
       status: 400,
-      message: 'Missing query parameter "url".',
+      message: 'Missing body parameter "url".',
     });
   }
 
@@ -67,18 +57,15 @@ app.post('/collection/importer', async (req, res, next) => {
 
 /**
  * A route that batch downloads assets from Albums
- * - Input: Takes an Album URL
- * - Output:
- *     - HTTP response of how many assets were downloaded
- *     - Downloads the highest-resolution version of each asset to a local directory named `media`. Each filename should be formatted as `[Flickr asset ID].[ext]`
  */
 app.post('/album/importer', async (req, res, next) => {
+  // expect to find a url property on the request body containing the album url
   const { url } = req.body;
 
   if (!url) {
     return next({
       status: 400,
-      message: 'Missing query parameter "url".',
+      message: 'Missing body parameter "url".',
     });
   }
 
