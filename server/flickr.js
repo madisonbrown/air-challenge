@@ -1,4 +1,3 @@
-/* eslint-disable prefer-destructuring */
 /* eslint-disable camelcase */
 
 const querystring = require('querystring');
