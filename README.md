@@ -3,13 +3,17 @@
 ## Installation
 
 To install:
-`npm install`
+
+1. `npm install`
+2. Create a file `secret.js` in the `server` folder which exports an object with the property `FLICKR_KEY`, containing your Flickr API key.
 
 To run in development mode:
-`npm run dev`
+
+- `npm run dev`
 
 To run in production mode:
-`npm start`
+
+- `npm start`
 
 ## Testing
 
